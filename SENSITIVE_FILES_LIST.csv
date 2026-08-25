@@ -1,0 +1,57 @@
+File_Name,Full_Path,File_Type,Contains,Should_Push,Priority,Notes
+.env,C:\Users\imdrx\IdeaProjects\PBL4\.env,Configuration,Database Password,NO,CRITICAL,Contains spring.datasource.password
+.env.local,C:\Users\imdrx\IdeaProjects\PBL4\.env.local,Configuration,Development Secrets,NO,CRITICAL,Local development environment overrides
+.env.production,C:\Users\imdrx\IdeaProjects\PBL4\.env.production,Configuration,Production Secrets,NO,CRITICAL,Production environment variables
+.env.production.local,C:\Users\imdrx\IdeaProjects\PBL4\.env.production.local,Configuration,Production Local Secrets,NO,CRITICAL,Local production overrides
+.env.*.local,C:\Users\imdrx\IdeaProjects\PBL4\.env.*.local,Configuration,Any Local Secrets,NO,CRITICAL,Wildcard for any local .env files
+.env.example,C:\Users\imdrx\IdeaProjects\PBL4\.env.example,Configuration,Template Only,YES,SAFE,Template without passwords - SAFE TO PUSH
+application.properties,C:\Users\imdrx\IdeaProjects\PBL4\backend-core\src\main\resources\application.properties,Configuration,Database Password,NO,CRITICAL,Contains spring.datasource.password
+application-prod.properties,C:\Users\imdrx\IdeaProjects\PBL4\backend-core\src\main\resources\application-prod.properties,Configuration,Production DB Password,NO,CRITICAL,Production database credentials
+.env,C:\Users\imdrx\IdeaProjects\PBL4\ai-service\.env,Configuration,API Keys & DB Password,NO,CRITICAL,AI service secrets
+config.py,C:\Users\imdrx\IdeaProjects\PBL4\ai-service\config.py,Python Config,Database Credentials,NO,HIGH,AI service configuration with secrets
+.env.local,C:\Users\imdrx\IdeaProjects\PBL4\frontend-web\.env.local,Configuration,Secret API Keys,NO,CRITICAL,Frontend local environment variables
+.env.production.local,C:\Users\imdrx\IdeaProjects\PBL4\frontend-web\.env.production.local,Configuration,Production Secrets,NO,CRITICAL,Frontend production local overrides
+config.json,C:\Users\imdrx\IdeaProjects\PBL4\frontend-web\config.json,JSON Config,API Credentials,NO,HIGH,Frontend configuration (if contains secrets)
+credentials.json,C:\Users\imdrx\IdeaProjects\PBL4\credentials.json,Credentials,Google/AWS Keys,NO,CRITICAL,Cloud provider credentials - NEVER PUSH
+auth.json,C:\Users\imdrx\IdeaProjects\PBL4\auth.json,Credentials,Authentication Tokens,NO,CRITICAL,Authentication tokens and OAuth
+password.txt,C:\Users\imdrx\IdeaProjects\PBL4\password.txt,Text,Plaintext Passwords,NO,CRITICAL,Never store plaintext passwords
+secrets.json,C:\Users\imdrx\IdeaProjects\PBL4\secrets.json,JSON,All Secrets,NO,CRITICAL,General secrets file
+*.key,C:\Users\imdrx\IdeaProjects\PBL4\*.key,Key File,Private Keys,NO,CRITICAL,Private encryption keys - NEVER PUSH
+*.pem,C:\Users\imdrx\IdeaProjects\PBL4\*.pem,Certificate,SSL Private Keys,NO,CRITICAL,SSL private certificates
+*.crt,C:\Users\imdrx\IdeaProjects\PBL4\*.crt,Certificate,Certificates,NO,HIGH,SSL certificates
+id_rsa,C:\Users\imdrx\IdeaProjects\PBL4\id_rsa,SSH Key,SSH Private Key,NO,CRITICAL,GitHub SSH key - NEVER PUSH
+id_rsa.pub,C:\Users\imdrx\IdeaProjects\PBL4\id_rsa.pub,SSH Key,SSH Public Key,YES,SAFE,Public SSH key
+*.sql,C:\Users\imdrx\IdeaProjects\PBL4\*.sql,Database,Database Dumps,NO,HIGH,May contain seed data with credentials
+*.sqlite,C:\Users\imdrx\IdeaProjects\PBL4\*.sqlite,Database,SQLite Database,NO,HIGH,SQLite database file
+*.sqlite3,C:\Users\imdrx\IdeaProjects\PBL4\*.sqlite3,Database,SQLite3 Database,NO,HIGH,SQLite3 database file
+*.db,C:\Users\imdrx\IdeaProjects\PBL4\*.db,Database,Database File,NO,HIGH,Database file
+dump.sql,C:\Users\imdrx\IdeaProjects\PBL4\dump.sql,Database,Database Dump,NO,HIGH,Database export
+docker-compose.override.yml,C:\Users\imdrx\IdeaProjects\PBL4\docker-compose.override.yml,Docker,Local Overrides,NO,HIGH,Local Docker Compose overrides
+.dockerignore.local,C:\Users\imdrx\IdeaProjects\PBL4\.dockerignore.local,Docker,Local Docker Config,NO,MEDIUM,Local Docker ignore rules
+private/,C:\Users\imdrx\IdeaProjects\PBL4\private\,Directory,Private Files,NO,CRITICAL,Private folder - DO NOT PUSH
+secrets/,C:\Users\imdrx\IdeaProjects\PBL4\secrets\,Directory,Secrets Files,NO,CRITICAL,Secrets folder - DO NOT PUSH
+.private/,C:\Users\imdrx\IdeaProjects\PBL4\.private\,Directory,Hidden Private Files,NO,CRITICAL,Hidden private folder
+.secrets/,C:\Users\imdrx\IdeaProjects\PBL4\.secrets\,Directory,Hidden Secrets,NO,CRITICAL,Hidden secrets folder
+*.log,C:\Users\imdrx\IdeaProjects\PBL4\*.log,Log,Application Logs,NO,MEDIUM,Application log files may contain sensitive data
+logs/,C:\Users\imdrx\IdeaProjects\PBL4\logs\,Directory,Log Files,NO,MEDIUM,Logs directory
+venv/,C:\Users\imdrx\IdeaProjects\PBL4\venv\,Directory,Python Virtual Env,NO,MEDIUM,Virtual environment - Python deps only
+env/,C:\Users\imdrx\IdeaProjects\PBL4\env\,Directory,Python Virtual Env,NO,MEDIUM,Virtual environment alternate
+node_modules/,C:\Users\imdrx\IdeaProjects\PBL4\node_modules\,Directory,Node Dependencies,NO,MEDIUM,Node.js dependencies
+target/,C:\Users\imdrx\IdeaProjects\PBL4\backend-core\target\,Directory,Java Build Artifacts,NO,MEDIUM,Maven build output
+__pycache__/,C:\Users\imdrx\IdeaProjects\PBL4\__pycache__\,Directory,Python Cache,NO,LOW,Python cache files
+.next/,C:\Users\imdrx\IdeaProjects\PBL4\frontend-web\.next\,Directory,Next.js Build,NO,MEDIUM,Next.js build output
+.gitignore,C:\Users\imdrx\IdeaProjects\PBL4\.gitignore,Configuration,Git Ignore Rules,YES,SAFE,Gitignore rules - includes .env - SAFE
+.env.example,C:\Users\imdrx\IdeaProjects\PBL4\backend-core\.env.example,Configuration,Backend Template,YES,SAFE,Backend template
+.env.example,C:\Users\imdrx\IdeaProjects\PBL4\ai-service\.env.example,Configuration,AI Service Template,YES,SAFE,AI service template
+.env.example,C:\Users\imdrx\IdeaProjects\PBL4\frontend-web\.env.example,Configuration,Frontend Template,YES,SAFE,Frontend template
+pom.xml,C:\Users\imdrx\IdeaProjects\PBL4\backend-core\pom.xml,Maven Config,Dependencies Only,YES,SAFE,Maven config - no secrets
+package.json,C:\Users\imdrx\IdeaProjects\PBL4\frontend-web\package.json,NPM Config,Dependencies Only,YES,SAFE,Package config - no secrets
+requirements.txt,C:\Users\imdrx\IdeaProjects\PBL4\ai-service\requirements.txt,Python Deps,Dependencies Only,YES,SAFE,Python dependencies - no secrets
+README.md,C:\Users\imdrx\IdeaProjects\PBL4\README.md,Documentation,Documentation,YES,SAFE,Architecture documentation
+SENSITIVE_FILES_GUIDE.md,C:\Users\imdrx\IdeaProjects\PBL4\SENSITIVE_FILES_GUIDE.md,Documentation,Documentation,YES,SAFE,Sensitive files guide
+SENSITIVE_FILES_QUICK_REFERENCE.md,C:\Users\imdrx\IdeaProjects\PBL4\SENSITIVE_FILES_QUICK_REFERENCE.md,Documentation,Documentation,YES,SAFE,Quick reference guide
+docker-compose.yml,C:\Users\imdrx\IdeaProjects\PBL4\docker-compose.yml,Docker,Template Docker Compose,YES,SAFE,Docker compose template - no password
+Dockerfile,C:\Users\imdrx\IdeaProjects\PBL4\ai-service\Dockerfile,Docker,Container Image,YES,SAFE,AI service Dockerfile
+Dockerfile,C:\Users\imdrx\IdeaProjects\PBL4\backend-core\Dockerfile,Docker,Container Image,YES,SAFE,Backend Dockerfile
+Dockerfile,C:\Users\imdrx\IdeaProjects\PBL4\frontend-web\Dockerfile,Docker,Container Image,YES,SAFE,Frontend Dockerfile
+
