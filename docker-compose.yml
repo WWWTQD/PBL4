@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: pbl4-postgres
+    environment:
+      POSTGRES_DB: pbl4_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - pbl4-network
+
+  # Python FastAPI AI Service
+  ai-service:
+    build:
+      context: ./ai-service
+      dockerfile: Dockerfile
+    container_name: pbl4-ai-service
+    ports:
+      - "8000:8000"
+    environment:
+      ALLOWED_ORIGINS: http://localhost:3000,http://localhost:8080,http://frontend:3000,http://backend:8080
+      PYTHON_ENV: production
+    depends_on:
+      - postgres
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    networks:
+      - pbl4-network
+    restart: always
+
+  # Spring Boot Backend
+  backend:
+    build:
+      context: ./backend-core
+      dockerfile: Dockerfile
+    container_name: pbl4-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/pbl4_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      AI_SERVICE_URL: http://ai-service:8000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ai-service:
+        condition: service_started
+    networks:
+      - pbl4-network
+    restart: always
+
+  # Next.js Frontend
+  frontend:
+    build:
+      context: ./frontend-web
+      dockerfile: Dockerfile
+    container_name: pbl4-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://backend:8080
+      NEXT_PUBLIC_AI_SERVICE_URL: http://ai-service:8000
+    depends_on:
+      - backend
+    networks:
+      - pbl4-network
+    restart: always
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  pbl4-network:
+    driver: bridge
+
