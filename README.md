@@ -1,4 +1,4 @@
-# PBL4: Hệ thống Scan và Ứng dụng AI trong Xử lý, Phục hồi & Đa dạng hóa Định dạng Tài liệu Số
+# PBL4: Document Scanning System and AI Application in Processing, Restoration, and Diversification of Digital Document Formats.
 
 **Document Scanning & AI-Powered Processing System**
 
